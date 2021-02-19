@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+<body>
+    <main class="main">
+        <section class="section-cards">
+            <div class="section-cards__heading-box center-element">
+                <h1 class="heading-primary">Flashcards</h1>
+            </div>
+            <div class="section-cards__cards-box"></div>
+            <div class="section-cards__btn-box center-element">
+                <span class="btn-move-card btn-move-card--previous">
+                    <i class="btn-move-card__icon fas fa-arrow-left"></i>
+                </span>
+                <div class="counter center-element">
+                    <span class="counter__text"></span>
+                </div>
+                <span class="btn-move-card btn-move-card--next">
+                    <i class="btn-move-card__icon fas fa-arrow-right"></i>
+                </span>
+            </div>
+            <div class="section-cards__btn-toggle-editor-box">
+                <div class="btn-toggle-editor">
+                    <div class="btn-toggle-editor__text">New Card</div>
+                    <div class="btn-toggle-editor__icon">
+                        <span class="btn-toggle-editor__el"></span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="section-editor">
+                <div class="section-editor__heading-box">
+                    <h1 class="heading-secondary">Create Card</h1>
+                </div>
+                <div class="section-editor__box">
+                    <div class="toolbar">
+                        <button class="toolbar__btn" >
+                            <i class="toolbar__icon fas fa-undo" data-command="undo" data-title="Undo"></i>
+                        </button>
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-redo" data-command="redo" data-title="Redo"></i>
+                        </button>
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-bold" data-command="bold" data-title="Bold"></i>
+                        </button>
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-italic" data-command="italic" data-title="Italic"></i>
+                        </button>
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-underline" data-command="underline" data-title="Underline"></i>
+                        </button>
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-strikethrough" data-command="strikethrough" data-title="Strikethrough"></i>
+                        </button>
+            
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-list" data-command="insertUnorderedList" data-title="Unordered List"></i>
+                        </button>
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-list-ol" data-command="insertOrderedList" data-title="Ordered List"></i>
+                        </button>
+            
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-align-left" data-command="justifyLeft" data-title="Justify Left"></i>
+                        </button>
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-align-center" data-command="justifyCenter" data-title="Justify Center"></i>
+                        </button>
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-align-right" data-command="justifyRight" data-title="Justify Right"></i>
+                        </button>
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-align-justify" data-command="justifyFull" data-title="Justify"></i>
+                        </button>
+            
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-link" data-command="createLink" data-title="Create Link"></i>
+                        </button>
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-image" data-command="insertImage" data-title="Insert Image"></i>
+                        </button>
+
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-cut" data-command="cut" data-title="Cut"></i>
+                        </button>
+                        <button class="toolbar__btn">
+                            <i class="toolbar__icon fas fa-copy" data-command="copy" data-title="Copy"></i>
+                        </button>
+                        <label class="toolbar__label" for="foreColor">
+                            <i class="toolbar__icon toolbar__icon--label fa fa-font" aria-hidden="true" data-title="Font Color"></i>
+                            <input type="color" class="toolbar__input toolbar__input--text-color" id="foreColor" data-command="foreColor" />
+                        </label>
+                        <label class="toolbar__label" for="backColor">
+                            <i class="toolbar__icon toolbar__icon--label fas fa-paint-brush" data-title="Background"></i>
+                            <input type="color" class="toolbar__input toolbar__input--bg-color" id="backColor" data-command="backColor" />
+                        </label>
+                 
+                    </div>
+                    <div class="section-editor__editor-container">
+                        <h3 class="heading-tertiary">Card Front Side</h3>
+                        <div class="editor editor--card-front-side" contenteditable="true"></div>
+                    </div>
+                    <div class="section-editor__editor-container">
+                        <h3 class="heading-tertiary">Card Back Side</h3>
+                        <div class="editor editor--card-back-side" contenteditable="true"></div>
+                    </div>
+                    
+                </div>
+                <div class="section-editor__btn-box">
+                    <button class="btn-create-card">Add Card</button>
+                </div>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

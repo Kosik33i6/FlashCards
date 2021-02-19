@@ -1,0 +1,63 @@
+.main {
+    overflow: hidden;
+}
+.section-cards {
+    width: 100%;
+    height: 100vh;
+    background-color: $color-light-grey-3;
+    &__heading-box {
+        height: 15%;
+        background-image: linear-gradient(to right, $color-primary-blue, lighten($color-primary-red, 10%));
+        box-shadow: 0 1rem 2rem rgba($color-black-1, $alpha);
+    }
+    &__cards-box {
+        width: 100%;
+        height: 70%;
+        perspective: 150rem;
+    }
+    &__btn-box {
+        height: 15%;
+        background-color: darken($color-light-grey-3, 3%);
+        box-shadow: 0 -1rem 2rem rgba($color-black-1, $alpha);
+    }
+    &__btn-toggle-editor-box {
+        position: fixed;
+        right: 5%;
+        bottom: 5%;
+        z-index: 2;
+        border-radius: 50%;
+    }
+}
+.section-editor {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $color-light-grey-4;
+    transition: bottom .5s ease-in-out;
+    &--visible {
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+    }
+    &__heading-box {
+        text-align: center;
+    }
+    &__box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        height: 80vh;
+    }
+    &__btn-box {
+        position: absolute;
+        left: 5%;
+        bottom: 5%;
+    }
+    &__editor-container {
+        margin-top: 3.5rem;
+    }
+}

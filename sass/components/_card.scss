@@ -1,0 +1,56 @@
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90rem;
+    height: 50rem;
+    transition: all .6s ease-in-out;
+}
+.card--current {
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    
+}
+.card--previous {
+    transform: translate(-150%, -50%) rotateY(45deg);
+    opacity: 0;
+} 
+.card--next {
+    transform: translate(50%, -50%) rotateY(-45deg);
+    opacity: 0;
+} 
+.card__inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    perspective: 1500px;
+}
+.card__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    border-radius: 1rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    font-size: $default-font-size;
+    box-shadow: 0 1rem 2rem rgba($color-black-1, $alpha);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+.card__side--front{
+    background-color: tomato;
+}
+.card__side--back{
+    background-color: teal;
+    transform: rotateX(-180deg);
+}
+.card__inner--flipped .card__side--front {
+    transform: rotateX(180deg);
+}
+.card__inner--flipped .card__side--back {
+    transform: rotateX(0);
+}
