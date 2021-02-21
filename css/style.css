@@ -169,6 +169,59 @@ body {
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35), inset -5px 5px 5px #006fb1, inset 5px -5px 5px #4bbcff; }
 
+.btn-remove-cards {
+  position: absolute;
+  bottom: 33%;
+  left: 5%;
+  background-color: #B80C09;
+  width: 17rem;
+  height: 6rem;
+  border-radius: 3rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all .3s ease-in-out; }
+  .btn-remove-cards__icon-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: #009FFD;
+    transition: all .3s ease-in-out; }
+  .btn-remove-cards__icon {
+    font-size: 3rem; }
+  .btn-remove-cards__text-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .btn-remove-cards__text {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-right: 1rem;
+    text-align: right;
+    text-transform: uppercase;
+    line-height: 6rem;
+    font-size: 1.2rem;
+    font-weight: 700; }
+    .btn-remove-cards__text::selection {
+      background: transparent; }
+  .btn-remove-cards:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35), inset -5px 5px 5px #f41d1a, inset 5px -5px 5px #6f0705;
+    transform: translateY(-3px); }
+  .btn-remove-cards:active {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35), inset -5px 5px 5px #6f0705, inset 5px -5px 5px #f41d1a;
+    transform: translateY(-1px); }
+  .btn-remove-cards:hover .btn-remove-cards__icon-box {
+    box-shadow: inset -5px 5px 5px #4bbcff, inset 5px -5px 5px #006fb1;
+    transform: scale(1.2); }
+  .btn-remove-cards:active .btn-remove-cards__icon-box {
+    box-shadow: inset -5px 5px 5px #006fb1, inset 5px -5px 5px #4bbcff;
+    transform: scale(1); }
+
 .card {
   position: absolute;
   top: 50%;
@@ -248,10 +301,8 @@ body {
   background-color: #fff;
   padding: 1.5rem;
   border-radius: 3px;
-  display: flex;
-  flex-wrap: wrap; }
+  display: flex; }
   .toolbar__btn {
-    flex-grow: 1;
     background-color: transparent;
     border: none;
     outline: none;
@@ -351,7 +402,9 @@ body {
     height: 70%;
     perspective: 150rem; }
   .section-cards__btn-box {
+    position: relative;
     height: 15%;
+    width: 100%;
     background-color: #f0f0f0;
     box-shadow: 0 -1rem 2rem rgba(0, 0, 0, 0.35); }
   .section-cards__btn-toggle-editor-box {

@@ -16,7 +16,9 @@
         perspective: 150rem;
     }
     &__btn-box {
+        position: relative;
         height: 15%;
+        width: 100%;
         background-color: darken($color-light-grey-3, 3%);
         box-shadow: 0 -1rem 2rem rgba($color-black-1, $alpha);
     }
@@ -51,6 +53,7 @@
         transform: translate(-50%, -50%);
         width: 60%;
         height: 80vh;
+        // overflow: hidden;
     }
     &__btn-box {
         position: absolute;

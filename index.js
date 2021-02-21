@@ -8,7 +8,9 @@ const toolbarButtons = document.querySelectorAll('.toolbar__btn');
 const inputTextColor = document.querySelector('.toolbar__input--text-color');
 const inputBgColor = document.querySelector('.toolbar__input--bg-color');
 
+const cardsContainer = document.querySelector('.section-cards__cards-box');
 const btnCreateCard = document.querySelector('.btn-create-card');
+const btnDeleteCards = document.querySelector('.btn-remove-cards');
  
 
 const cardsCounter = document.querySelector('.counter');
@@ -20,8 +22,7 @@ const editors = {
 };
 
 const cards = [];
-const cardsData = getCardsData();;
-console.log('cards data is array: ', cardsData);
+const cardsData = getCardsData();
 
 let totalCardsNum = 0;
 let currentCardNum = 0;
@@ -62,8 +63,8 @@ editor.addEventListener('click', setFocusOnEditor);
 function setToolbarBtnActive(btn) {
     const parentEl = btn.parentElement;
     const command = btn.dataset['command'];
-    
-    if(command === 'bold' || command === 'italic' || command === 'underline' || command === 'strikethrough' || command === 'insertUnorderedList' || command === 'insertOrderedList') {
+    commandArr = ['bold', 'italic', 'underline', 'strikethrough', 'insertUnorderedList', 'insertOrderedList'];
+    if(commandArr.includes(command)) {
         parentEl.classList.toggle('toolbar__btn--active');
     }
 }
@@ -129,9 +130,6 @@ function createCards() {
 createCards();
 // * Create Card
 function createCard({cardFrontSide, cardBackSide, bgColor}, index) {
-    console.log('card data in fun createCard: ', cardFrontSide, cardBackSide, bgColor);
-    const cardsContainer = document.querySelector('.section-cards__cards-box');
-
     const cardSideFront = document.createElement('div');
     const cardSideBack = document.createElement('div');
     const cardInner = document.createElement('div');
@@ -162,7 +160,7 @@ function createCard({cardFrontSide, cardBackSide, bgColor}, index) {
 
     card.addEventListener('click', () => flipElement(card));
 
-    totalCardsNum = cards.length;
+    totalCardsNum = cardsData.length;
     cardsCounter.textContent = `${currentCardNum + 1} | ${totalCardsNum}`;
 }
 
@@ -262,3 +260,19 @@ function flipElement(card) {
         return;
     }
 }
+
+// *Delete all cards
+function deleteCards(cardsData) {
+    if(cardsData.length === 0) {
+        return;
+    }
+    const confirm = window.confirm('Are you sure you want to remove all cards?');
+    if(confirm) {
+        cardsContainer.innerHTML = "";
+        localStorage.clear();
+        window.location.reload();
+    }
+    
+}
+
+btnDeleteCards.addEventListener('click', () => deleteCards(cardsData));
