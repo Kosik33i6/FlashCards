@@ -4,11 +4,23 @@
     padding: 1.5rem;
     border-radius:3px;
     display: flex;
-    // width: 150%;
-    // flex-wrap: wrap;
-    
+    flex-wrap: wrap;
+    flex-basis: 10%;
+    &__btn-box {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include respond(tablet-land) {
+            flex-basis: 7rem;
+        }
+        @include respond(phone-land) {
+            flex-basis: 5rem;
+        }
+    }
     &__btn {
-        // flex-grow: 1;
+        width: 5rem;
+        height: 5rem;
         background-color: transparent;
         border: none;
         outline: none;
@@ -74,17 +86,17 @@
             transition-delay: 0s;
         }
     }
-    &__btn--active &__icon {
-        background-color: darken($color-light-grey-5, 10%);
-        color: lighten($color-primary-red, 20%);
-        box-shadow: 0 0 0 rgba($color-black-1, $alpha), inset 5px 5px 5px darken($color-light-grey-5, 35%), inset -5px -5px 5px lighten($color-light-grey-5, 5%);
-        &:hover {
-            transform: translateY(-1px) scale(1);
-        }
-        &:active {
-            transform: translateY(-1px) scale(.95);
-        }
-    }
+    // &__btn--active &__icon {
+    //     background-color: darken($color-light-grey-5, 10%);
+    //     color: lighten($color-primary-red, 20%);
+    //     box-shadow: 0 0 0 rgba($color-black-1, $alpha), inset 5px 5px 5px darken($color-light-grey-5, 35%), inset -5px -5px 5px lighten($color-light-grey-5, 5%);
+    //     &:hover {
+    //         transform: translateY(-1px) scale(1);
+    //     }
+    //     &:active {
+    //         transform: translateY(-1px) scale(.95);
+    //     }
+    // }
     &__label {
         // flex-grow: 1;
         position: relative;

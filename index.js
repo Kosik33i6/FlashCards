@@ -27,7 +27,8 @@ const cardsData = getCardsData();
 let totalCardsNum = 0;
 let currentCardNum = 0;
 let activeEditor = editors.cardFrontSide;
-let bgColor = '#009FFD';
+let bgColor = '#FFFFFF';
+let textColor = '#000000';
 
 // * Open editor
 function toggleEditor() {
@@ -60,14 +61,14 @@ function setFocusOnEditor(event) {
 editor.addEventListener('click', setFocusOnEditor);
 
 // * Set button active
-function setToolbarBtnActive(btn) {
-    const parentEl = btn.parentElement;
-    const command = btn.dataset['command'];
-    commandArr = ['bold', 'italic', 'underline', 'strikethrough', 'insertUnorderedList', 'insertOrderedList'];
-    if(commandArr.includes(command)) {
-        parentEl.classList.toggle('toolbar__btn--active');
-    }
-}
+// function setToolbarBtnActive(btn) {
+//     const parentEl = btn.parentElement;
+//     const command = btn.dataset['command'];
+//     commandArr = ['bold', 'italic', 'underline', 'strikethrough', 'insertUnorderedList', 'insertOrderedList'];
+//     if(commandArr.includes(command)) {
+//         parentEl.classList.toggle('toolbar__btn--active');
+//     }
+// }
 
 // * Format Text
 function formatText(element) {
@@ -79,13 +80,13 @@ function formatText(element) {
     } else {
         document.execCommand(command, false, null);
     }
-    setToolbarBtnActive(element);
+    // setToolbarBtnActive(element);
 }
 
 toolbarButtons.forEach(button => {
     button.addEventListener('click', (element) => formatText(element.target));
 });
-
+// * Set text color
 function setTextColor(event) {
     const value = event.target.value;
     const command = event.target.dataset['command'];
@@ -95,10 +96,13 @@ function setTextColor(event) {
 
 inputTextColor.addEventListener('change', setTextColor);
 
+// * set bg card color
 function setBgColor(event) {
     const value = event.target.value;
     bgColor = value;
-    console.log('bg: ', bgColor);
+    console.log('bgColor: ', bgColor);
+    editors.cardFrontSide.style.backgroundColor = bgColor;
+    editors.cardBackSide.style.backgroundColor = bgColor;
 }
 
 inputBgColor.addEventListener('change', setBgColor);
@@ -272,7 +276,6 @@ function deleteCards(cardsData) {
         localStorage.clear();
         window.location.reload();
     }
-    
 }
 
 btnDeleteCards.addEventListener('click', () => deleteCards(cardsData));

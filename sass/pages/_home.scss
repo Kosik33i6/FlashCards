@@ -9,18 +9,39 @@
         height: 15%;
         background-image: linear-gradient(to right, $color-primary-blue, lighten($color-primary-red, 10%));
         box-shadow: 0 1rem 2rem rgba($color-black-1, $alpha);
+        @include respond(tablet-land) {
+            height: 12.5%;
+        }
     }
     &__cards-box {
         width: 100%;
         height: 70%;
         perspective: 150rem;
+        @include respond(tablet-land) {
+            height: 75%;
+        }
+        @include respond(phone-land) {
+            height: 70%;
+        }
+        @include respond(phone-port) {
+            height: 55%;
+        }
     }
     &__btn-box {
         position: relative;
         height: 15%;
         width: 100%;
         background-color: darken($color-light-grey-3, 3%);
-        box-shadow: 0 -1rem 2rem rgba($color-black-1, $alpha);
+        border-top: 2px solid $color-light-grey-2;
+        @include respond(tablet-land) {
+            height: 12.5%;
+        }
+        @include respond(phone-land) {
+            height: 15%;
+        }
+        @include respond(phone-port) {
+            height: 30%;
+        }
     }
     &__btn-toggle-editor-box {
         position: fixed;
@@ -28,6 +49,14 @@
         bottom: 5%;
         z-index: 2;
         border-radius: 50%;
+        @include respond(tablet-land) {
+            right: 2.5%;
+            bottom: 2.5%;
+        }
+        @include respond(phone-port) {
+            right: 2.5%;
+            bottom: 2.5%;
+        }
     }
 }
 .section-editor {
@@ -46,21 +75,46 @@
     &__heading-box {
         text-align: center;
     }
-    &__box {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    &__toolbar-box {
+        width: 80%;
+        margin: 0 auto;
+        @include respond(phone-land) {
+            width: 100%;
+        }
+        @include respond(phone-port) {
+            width: 100%;
+        }
+    }
+    &__editor-box {
+        margin: 0 auto;
         width: 60%;
         height: 80vh;
-        // overflow: hidden;
+        @include respond(tablet-port) {
+            width: 80%;
+        }
+        @include respond(phone-land) {
+            width: 100%;
+            display: flex;
+        }
+    }
+    &__editor-container {
+        flex-grow: 1;
+        margin-top: 2.5rem;
+        @include respond(phone-land) {
+            padding: 1rem;
+        }
     }
     &__btn-box {
         position: absolute;
         left: 5%;
         bottom: 5%;
-    }
-    &__editor-container {
-        margin-top: 3.5rem;
+        @include respond(tablet-land) {
+            left: 2.5%;
+            bottom: 2.5%;
+        }
+        @include respond(phone-port) {
+            bottom: 2.5%;
+            left: 2.5%;
+        }
     }
 }

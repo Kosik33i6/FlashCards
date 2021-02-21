@@ -11,4 +11,7 @@
     & li {
         margin-left: 1rem;
     }
+    @include respond(phone-land) {
+        height: 50vh;
+    }
 }

@@ -9,6 +9,9 @@ body {
     text-transform: uppercase;
     text-align: center;
     color: $color-white;
+    @include respond(phone-port) {
+        font-size: 4.5rem;
+    }
 }
 .heading-secondary {
     display: inline-block;
@@ -17,9 +20,14 @@ body {
     letter-spacing: 2rem;
     text-transform: uppercase;
     background-image: linear-gradient(to right, $color-primary-red, $color-primary-blue);
-    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    @include respond(tablet-land) {
+        font-size: 4rem;
+    }
+    @include respond(tablet-port) {
+        font-size: 3.5rem;
+    }
 }
 .heading-tertiary {
     padding: 1rem 0;
@@ -28,4 +36,12 @@ body {
     letter-spacing: 1.5rem;
     text-align: center;
     color: $color-grey-2;
+    @include respond(tablet-land) {
+        padding: .5rem 0;
+        font-size: 2rem;
+    }
+    @include respond(tablet-port) {
+        padding: .3rem 0;
+        font-size: 1.7rem;
+    }
 }

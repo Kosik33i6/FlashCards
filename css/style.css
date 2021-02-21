@@ -7,6 +7,12 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 900px) and (orientation: landscape) {
+    html {
+      font-size: 37.5%; } }
+  @media (max-width: 450px) and (orientation: portrait) {
+    html {
+      font-size: 40.625%; } }
 
 body {
   font-family: "Raleway", sans-serif; }
@@ -19,6 +25,9 @@ body {
   text-transform: uppercase;
   text-align: center;
   color: #fff; }
+  @media (max-width: 450px) and (orientation: portrait) {
+    .heading-primary {
+      font-size: 4.5rem; } }
 
 .heading-secondary {
   display: inline-block;
@@ -27,9 +36,14 @@ body {
   letter-spacing: 2rem;
   text-transform: uppercase;
   background-image: linear-gradient(to right, #B80C09, #009FFD);
-  background-clip: text;
   -webkit-background-clip: text;
   color: transparent; }
+  @media (max-width: 1200px) and (orientation: landscape) {
+    .heading-secondary {
+      font-size: 4rem; } }
+  @media (max-width: 900px) and (orientation: portrait) {
+    .heading-secondary {
+      font-size: 3.5rem; } }
 
 .heading-tertiary {
   padding: 1rem 0;
@@ -38,17 +52,25 @@ body {
   letter-spacing: 1.5rem;
   text-align: center;
   color: #545454; }
+  @media (max-width: 1200px) and (orientation: landscape) {
+    .heading-tertiary {
+      padding: .5rem 0;
+      font-size: 2rem; } }
+  @media (max-width: 900px) and (orientation: portrait) {
+    .heading-tertiary {
+      padding: .3rem 0;
+      font-size: 1.7rem; } }
 
 .btn-move-card {
   padding: 0 2rem;
   cursor: pointer; }
   .btn-move-card__icon {
-    width: 8rem;
-    line-height: 8rem;
+    width: 7rem;
+    line-height: 7rem;
     text-align: center;
     color: #fff;
     background-color: #009FFD;
-    font-size: 7rem;
+    font-size: 6rem;
     border-radius: 50%;
     transition: all .3s ease;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35); }
@@ -180,6 +202,18 @@ body {
   color: #fff;
   cursor: pointer;
   transition: all .3s ease-in-out; }
+  @media (max-width: 1200px) and (orientation: landscape) {
+    .btn-remove-cards {
+      bottom: 16.66%;
+      left: 2.5%; } }
+  @media (max-width: 900px) and (orientation: landscape) {
+    .btn-remove-cards {
+      bottom: 2.5%;
+      left: 2.5%; } }
+  @media (max-width: 450px) and (orientation: portrait) {
+    .btn-remove-cards {
+      bottom: 8.33%;
+      left: 2.5%; } }
   .btn-remove-cards__icon-box {
     position: absolute;
     top: 0;
@@ -229,6 +263,18 @@ body {
   width: 90rem;
   height: 50rem;
   transition: all .6s ease-in-out; }
+  @media (max-width: 1200px) and (orientation: landscape) {
+    .card {
+      width: 70rem;
+      height: 35rem; } }
+  @media (max-width: 900px) and (orientation: portrait) {
+    .card {
+      width: 70rem;
+      height: 35rem; } }
+  @media (max-width: 450px) and (orientation: portrait) {
+    .card {
+      width: 50rem;
+      height: 25rem; } }
 
 .card--current {
   transform: translate(-50%, -50%);
@@ -295,14 +341,32 @@ body {
   overflow: hidden; }
   .editor li {
     margin-left: 1rem; }
+  @media (max-width: 900px) and (orientation: landscape) {
+    .editor {
+      height: 50vh; } }
 
 .toolbar {
   border: 2px solid #eceff1;
   background-color: #fff;
   padding: 1.5rem;
   border-radius: 3px;
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 10%; }
+  .toolbar__btn-box {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    @media (max-width: 1200px) and (orientation: landscape) {
+      .toolbar__btn-box {
+        flex-basis: 7rem; } }
+    @media (max-width: 900px) and (orientation: landscape) {
+      .toolbar__btn-box {
+        flex-basis: 5rem; } }
   .toolbar__btn {
+    width: 5rem;
+    height: 5rem;
     background-color: transparent;
     border: none;
     outline: none;
@@ -360,14 +424,6 @@ body {
       z-index: -1;
       transition-duration: 0s;
       transition-delay: 0s; }
-  .toolbar__btn--active .toolbar__icon {
-    background-color: #cfd6db;
-    color: #f53532;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.35), inset 5px 5px 5px #8598a5, inset -5px -5px 5px #fbfbfc; }
-    .toolbar__btn--active .toolbar__icon:hover {
-      transform: translateY(-1px) scale(1); }
-    .toolbar__btn--active .toolbar__icon:active {
-      transform: translateY(-1px) scale(0.95); }
   .toolbar__label {
     position: relative;
     width: 5rem;
@@ -397,22 +453,51 @@ body {
     height: 15%;
     background-image: linear-gradient(to right, #009FFD, #e90f0b);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35); }
+    @media (max-width: 1200px) and (orientation: landscape) {
+      .section-cards__heading-box {
+        height: 12.5%; } }
   .section-cards__cards-box {
     width: 100%;
     height: 70%;
     perspective: 150rem; }
+    @media (max-width: 1200px) and (orientation: landscape) {
+      .section-cards__cards-box {
+        height: 75%; } }
+    @media (max-width: 900px) and (orientation: landscape) {
+      .section-cards__cards-box {
+        height: 70%; } }
+    @media (max-width: 450px) and (orientation: portrait) {
+      .section-cards__cards-box {
+        height: 55%; } }
   .section-cards__btn-box {
     position: relative;
     height: 15%;
     width: 100%;
     background-color: #f0f0f0;
-    box-shadow: 0 -1rem 2rem rgba(0, 0, 0, 0.35); }
+    border-top: 2px solid #d0d0d0; }
+    @media (max-width: 1200px) and (orientation: landscape) {
+      .section-cards__btn-box {
+        height: 12.5%; } }
+    @media (max-width: 900px) and (orientation: landscape) {
+      .section-cards__btn-box {
+        height: 15%; } }
+    @media (max-width: 450px) and (orientation: portrait) {
+      .section-cards__btn-box {
+        height: 30%; } }
   .section-cards__btn-toggle-editor-box {
     position: fixed;
     right: 5%;
     bottom: 5%;
     z-index: 2;
     border-radius: 50%; }
+    @media (max-width: 1200px) and (orientation: landscape) {
+      .section-cards__btn-toggle-editor-box {
+        right: 2.5%;
+        bottom: 2.5%; } }
+    @media (max-width: 450px) and (orientation: portrait) {
+      .section-cards__btn-toggle-editor-box {
+        right: 2.5%;
+        bottom: 2.5%; } }
 
 .section-editor {
   position: fixed;
@@ -428,16 +513,41 @@ body {
     z-index: 1; }
   .section-editor__heading-box {
     text-align: center; }
-  .section-editor__box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .section-editor__toolbar-box {
+    width: 80%;
+    margin: 0 auto; }
+    @media (max-width: 900px) and (orientation: landscape) {
+      .section-editor__toolbar-box {
+        width: 100%; } }
+    @media (max-width: 450px) and (orientation: portrait) {
+      .section-editor__toolbar-box {
+        width: 100%; } }
+  .section-editor__editor-box {
+    margin: 0 auto;
     width: 60%;
     height: 80vh; }
+    @media (max-width: 900px) and (orientation: portrait) {
+      .section-editor__editor-box {
+        width: 80%; } }
+    @media (max-width: 900px) and (orientation: landscape) {
+      .section-editor__editor-box {
+        width: 100%;
+        display: flex; } }
+  .section-editor__editor-container {
+    flex-grow: 1;
+    margin-top: 2.5rem; }
+    @media (max-width: 900px) and (orientation: landscape) {
+      .section-editor__editor-container {
+        padding: 1rem; } }
   .section-editor__btn-box {
     position: absolute;
     left: 5%;
     bottom: 5%; }
-  .section-editor__editor-container {
-    margin-top: 3.5rem; }
+    @media (max-width: 1200px) and (orientation: landscape) {
+      .section-editor__btn-box {
+        left: 2.5%;
+        bottom: 2.5%; } }
+    @media (max-width: 450px) and (orientation: portrait) {
+      .section-editor__btn-box {
+        bottom: 2.5%;
+        left: 2.5%; } }

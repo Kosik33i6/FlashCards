@@ -47,70 +47,104 @@
                 <div class="section-editor__heading-box">
                     <h1 class="heading-secondary">Create Card</h1>
                 </div>
-                <div class="section-editor__box">
-                    <div class="toolbar">
-                        <button class="toolbar__btn" >
+               <div class="section-editor__toolbar-box">
+                <div class="toolbar">
+                    <div class="toolbar__btn-box">
+                        <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-undo" data-command="undo" data-title="Undo"></i>
                         </button>
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-redo" data-command="redo" data-title="Redo"></i>
                         </button>
+                    </div>
+
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-bold" data-command="bold" data-title="Bold"></i>
                         </button>
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-italic" data-command="italic" data-title="Italic"></i>
                         </button>
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-underline" data-command="underline" data-title="Underline"></i>
                         </button>
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-strikethrough" data-command="strikethrough" data-title="Strikethrough"></i>
                         </button>
-            
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-list" data-command="insertUnorderedList" data-title="Unordered List"></i>
                         </button>
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-list-ol" data-command="insertOrderedList" data-title="Ordered List"></i>
                         </button>
-            
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-align-left" data-command="justifyLeft" data-title="Justify Left"></i>
                         </button>
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-align-center" data-command="justifyCenter" data-title="Justify Center"></i>
                         </button>
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-align-right" data-command="justifyRight" data-title="Justify Right"></i>
                         </button>
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-align-justify" data-command="justifyFull" data-title="Justify"></i>
                         </button>
-            
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-link" data-command="createLink" data-title="Create Link"></i>
                         </button>
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-image" data-command="insertImage" data-title="Insert Image"></i>
                         </button>
-
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-cut" data-command="cut" data-title="Cut"></i>
                         </button>
+                    </div>
+                    <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-copy" data-command="copy" data-title="Copy"></i>
                         </button>
+                    </div>  
+                    <div class="toolbar__btn-box">
                         <label class="toolbar__label" for="foreColor">
                             <i class="toolbar__icon toolbar__icon--label fa fa-font" aria-hidden="true" data-title="Font Color"></i>
                             <input type="color" class="toolbar__input toolbar__input--text-color" id="foreColor" data-command="foreColor" />
                         </label>
+                    </div>
+                    <div class="toolbar__btn-box">
                         <label class="toolbar__label" for="backColor">
                             <i class="toolbar__icon toolbar__icon--label fas fa-paint-brush" data-title="Background"></i>
                             <input type="color" class="toolbar__input toolbar__input--bg-color" id="backColor" data-command="backColor" />
                         </label>
-                 
                     </div>
+                </div>
+               </div>
+                <div class="section-editor__editor-box">
                     <div class="section-editor__editor-container">
                         <h3 class="heading-tertiary">Card Front Side</h3>
                         <div class="editor editor--card-front-side" contenteditable="true"></div>

@@ -8,4 +8,10 @@
 }
 html {
     font-size: 62.5%;
+    @include respond(phone-land) {
+        font-size: 37.5%;
+    }
+    @include respond(phone-port) {
+        font-size: 40.625%;
+    }
 }

@@ -2,12 +2,12 @@
     padding: 0 2rem;
     cursor: pointer;
     &__icon {
-        width: 8rem;
-        line-height: 8rem;
+        width: 7rem;
+        line-height: 7rem;
         text-align: center;
         color: $color-white;
         background-color: $color-primary-blue;
-        font-size: 7rem;
+        font-size: 6rem;
         border-radius: 50%;
         transition: all .3s ease;
         box-shadow: 0 .5rem 1rem rgba($color-black-1, $alpha);
@@ -164,6 +164,18 @@
     color: $color-white;
     cursor: pointer;
     transition: all .3s ease-in-out;
+    @include respond(tablet-land) {
+        bottom: 16.66%;
+        left: 2.5%;
+    }
+    @include respond(phone-land) {
+        bottom: 2.5%;
+        left: 2.5%;
+    }
+    @include respond(phone-port) {
+        bottom: 8.33%;
+        left: 2.5%;
+    }
     &__icon-box {
         position: absolute;
         top: 0;

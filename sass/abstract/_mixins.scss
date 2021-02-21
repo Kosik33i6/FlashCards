@@ -1,0 +1,14 @@
+@mixin respond($breakpoint) {
+    @if $breakpoint == tablet-land {
+        @media (max-width: 1200px) and (orientation: landscape) {@content};
+    }
+    @if $breakpoint == tablet-port {
+        @media (max-width: 900px) and (orientation: portrait) {@content};
+    }
+    @if $breakpoint == phone-land {
+        @media (max-width: 900px) and (orientation: landscape) {@content};
+    }
+    @if $breakpoint == phone-port {
+        @media (max-width: 450px) and (orientation: portrait) {@content};
+    }
+}
