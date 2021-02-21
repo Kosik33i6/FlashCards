@@ -20,10 +20,13 @@ const editors = {
 };
 
 const cards = [];
+const cardsData = getCardsData();;
+console.log('cards data is array: ', cardsData);
+
 let totalCardsNum = 0;
 let currentCardNum = 0;
 let activeEditor = editors.cardFrontSide;
-let bgColor = '#f8f8f8';
+let bgColor = '#009FFD';
 
 // * Open editor
 function toggleEditor() {
@@ -99,9 +102,34 @@ function setBgColor(event) {
 
 inputBgColor.addEventListener('change', setBgColor);
 
+// * Get cards data from local storage
 
+function getCardsData() {
+    const data = JSON.parse(localStorage.getItem('cardsData'));
+    if(data === null) return [];
+    else return data; 
+}
+
+
+// * Set cards data to local storage
+function setCardsData(cardsData) {
+    localStorage.setItem('cardsData', JSON.stringify(cardsData));
+    window.location.reload();
+}
+
+// * Create all cards
+function createCards() {
+    if(cardsData.length === 0) {
+        return;
+    } else {
+        cardsData.forEach((data, index) => createCard(data, index));
+    }
+}
+
+createCards();
 // * Create Card
-function createCard({cardFrontSide, cardBackSide}) {
+function createCard({cardFrontSide, cardBackSide, bgColor}, index) {
+    console.log('card data in fun createCard: ', cardFrontSide, cardBackSide, bgColor);
     const cardsContainer = document.querySelector('.section-cards__cards-box');
 
     const cardSideFront = document.createElement('div');
@@ -113,7 +141,7 @@ function createCard({cardFrontSide, cardBackSide}) {
     cardSideBack.classList.add('card__side', 'card__side--back');
     cardInner.classList.add('card__inner');
 
-    if(cards.length === 0) {
+    if(index === 0) {
         card.classList.add('card', 'card--current');
     } else {
         card.classList.add('card', 'card--next');
@@ -141,17 +169,19 @@ function createCard({cardFrontSide, cardBackSide}) {
 // * Add card
 function addCard() {
 
-    const editorsContent = {
+    const newCardData = {
         cardFrontSide: editors.cardFrontSide.innerHTML,
         cardBackSide: editors.cardBackSide.innerHTML,
+        bgColor,
     };
+    console.log('card data in addCard', newCardData);
     
-    if(editorsContent.cardFrontSide === "" || editorsContent.cardBackSide === "") {
+    if(newCardData.cardFrontSide === "" || newCardData.cardBackSide === "") {
         alert('The content on the card is empty');
         return;
     };
 
-    createCard(editorsContent);
+    createCard(newCardData);
 
     editor.classList.remove('section-editor--visible');
     btnToggleEditor.classList.remove('btn-toggle-editor--active');
@@ -160,6 +190,9 @@ function addCard() {
     editors.cardBackSide.innerHTML = "";
 
     btnToggleEditorText.textContent = 'New Card';
+
+    cardsData.push(newCardData);
+    setCardsData(cardsData);
 
 }
 btnCreateCard.addEventListener('click', addCard);
