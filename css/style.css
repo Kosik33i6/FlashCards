@@ -338,7 +338,8 @@ body {
   background-color: #fff;
   font-size: 2rem;
   outline: none;
-  overflow: hidden; }
+  overflow: hidden;
+  transition: all .4s ease; }
   .editor li {
     margin-left: 1rem; }
   @media (max-width: 900px) and (orientation: landscape) {
