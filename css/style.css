@@ -263,22 +263,22 @@ body {
   width: 90rem;
   height: 50rem;
   transition: all .6s ease-in-out; }
-  @media (max-width: 1200px) and (orientation: landscape) {
-    .card {
-      width: 70rem;
-      height: 35rem; } }
-  @media (max-width: 900px) and (orientation: portrait) {
-    .card {
-      width: 70rem;
-      height: 35rem; } }
-  @media (max-width: 450px) and (orientation: portrait) {
-    .card {
-      width: 50rem;
-      height: 25rem; } }
 
 .card--current {
   transform: translate(-50%, -50%);
   z-index: 1; }
+  @media (max-width: 1200px) and (orientation: landscape) {
+    .card--current {
+      transform: translate(-50%, -50%) scale(0.9); } }
+  @media (max-width: 900px) and (orientation: portrait) {
+    .card--current {
+      transform: translate(-50%, -50%) scale(0.8); } }
+  @media (max-width: 900px) and (orientation: landscape) {
+    .card--current {
+      transform: translate(-50%, -50%) scale(0.75); } }
+  @media (max-width: 450px) and (orientation: portrait) {
+    .card--current {
+      transform: translate(-50%, -50%) scale(0.6); } }
 
 .card--previous {
   transform: translate(-150%, -50%) rotateY(45deg);

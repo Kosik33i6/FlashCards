@@ -4,24 +4,23 @@
     left: 50%;
     width: 90rem;
     height: 50rem;
-    transition: all .6s ease-in-out;
-    @include respond(tablet-land) {
-        width: 70rem;
-        height: 35rem;
-    }
-    @include respond(tablet-port) {
-        width: 70rem;
-        height: 35rem;
-    }
-    @include respond(phone-port) {
-        width: 50rem;
-        height: 25rem;
-    }
-    
+    transition: all .6s ease-in-out;    
 }
 .card--current {
     transform: translate(-50%, -50%);
     z-index: 1;
+    @include respond(tablet-land) {
+        transform: translate(-50%, -50%) scale(.9);
+    }
+    @include respond(tablet-port) {
+        transform: translate(-50%, -50%) scale(.8);
+    }
+    @include respond(phone-land) {
+        transform: translate(-50%, -50%) scale(.75);
+    }
+    @include respond(phone-port) {
+        transform: translate(-50%, -50%) scale(.6);
+    }
     
 }
 .card--previous {
