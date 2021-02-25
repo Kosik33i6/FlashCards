@@ -144,11 +144,11 @@ body {
   .btn-toggle-editor--active {
     background-color: #B80C09; }
     .btn-toggle-editor--active:hover {
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35), inset 5px 5px 5px #f41d1a, inset -5px -5px 5px #6f0705; }
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35), inset -5px 5px 5px #f41d1a, inset 5px -5px 5px #6f0705; }
     .btn-toggle-editor--active:active {
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35), inset 5px 5px 5px #6f0705, inset -5px -5px 5px #f41d1a; }
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35), inset -5px 5px 5px #6f0705, inset 5px -5px 5px #f41d1a; }
   .btn-toggle-editor--active .btn-toggle-editor__icon {
-    transform: rotate(225deg);
+    transform: rotate(-225deg);
     background-color: #009FFD; }
   .btn-toggle-editor--active:hover .btn-toggle-editor__icon {
     box-shadow: inset 5px 5px 5px #4bbcff, inset -5px -5px 5px #006fb1; }
@@ -183,13 +183,13 @@ body {
     transition: all .3s ease-in-out; }
   .btn-create-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35), inset -5px 5px 5px #4bbcff, inset 5px -5px 5px #006fb1; }
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35), inset 5px 5px 5px #4bbcff, inset -5px -5px 5px #006fb1; }
     .btn-create-card:hover::after {
       transform: scale(1.5);
       opacity: 0; }
   .btn-create-card:active {
     transform: translateY(-1px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35), inset -5px 5px 5px #006fb1, inset 5px -5px 5px #4bbcff; }
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35), inset 5px 5px 5px #006fb1, inset -5px -5px 5px #4bbcff; }
 
 .btn-remove-cards {
   position: absolute;
@@ -509,7 +509,8 @@ body {
     right: 5%;
     bottom: 5%;
     z-index: 2;
-    border-radius: 50%; }
+    border-radius: 50%;
+    transition: all .5s ease-in-out; }
     @media (max-width: 1200px) and (orientation: landscape) {
       .section-cards__btn-toggle-editor-box {
         right: 2.5%;
@@ -518,6 +519,17 @@ body {
       .section-cards__btn-toggle-editor-box {
         right: 2.5%;
         bottom: 2.5%; } }
+    .section-cards__btn-toggle-editor-box--active {
+      right: calc(95% - 15rem);
+      bottom: 5%; }
+      @media (max-width: 1200px) and (orientation: landscape) {
+        .section-cards__btn-toggle-editor-box--active {
+          right: calc(97.5% - 15rem);
+          bottom: 2.5%; } }
+      @media (max-width: 450px) and (orientation: portrait) {
+        .section-cards__btn-toggle-editor-box--active {
+          right: calc(97.5% - 15rem);
+          bottom: 2.5%; } }
 
 .section-editor {
   position: fixed;
@@ -561,13 +573,13 @@ body {
         padding: 1rem; } }
   .section-editor__btn-box {
     position: absolute;
-    left: 5%;
+    right: 5%;
     bottom: 5%; }
     @media (max-width: 1200px) and (orientation: landscape) {
       .section-editor__btn-box {
-        left: 2.5%;
+        right: 2.5%;
         bottom: 2.5%; } }
     @media (max-width: 450px) and (orientation: portrait) {
       .section-editor__btn-box {
         bottom: 2.5%;
-        left: 2.5%; } }
+        right: 2.5%; } }

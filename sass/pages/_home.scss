@@ -49,6 +49,7 @@
         bottom: 5%;
         z-index: 2;
         border-radius: 50%;
+        transition: all .5s ease-in-out;
         @include respond(tablet-land) {
             right: 2.5%;
             bottom: 2.5%;
@@ -56,6 +57,18 @@
         @include respond(phone-port) {
             right: 2.5%;
             bottom: 2.5%;
+        }
+        &--active {
+            right: calc(95% - 15rem);
+            bottom: 5%;
+            @include respond(tablet-land) {
+                right: calc(97.5% - 15rem);
+                bottom: 2.5%;
+            }
+            @include respond(phone-port) {
+                right: calc(97.5% - 15rem);
+                bottom: 2.5%;
+            }
         }
     }
 }
@@ -106,15 +119,15 @@
     }
     &__btn-box {
         position: absolute;
-        left: 5%;
+        right: 5%;
         bottom: 5%;
         @include respond(tablet-land) {
-            left: 2.5%;
+            right: 2.5%;
             bottom: 2.5%;
         }
         @include respond(phone-port) {
             bottom: 2.5%;
-            left: 2.5%;
+            right: 2.5%;
         }
     }
 }

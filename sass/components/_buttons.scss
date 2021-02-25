@@ -95,14 +95,14 @@
     &--active {
         background-color: $color-primary-red;
         &:hover {
-            box-shadow: 0 1rem 2rem rgba($color-black-1, $alpha), inset 5px 5px 5px lighten($color-primary-red, 15%), inset -5px -5px 5px darken($color-primary-red, 15%);
+            box-shadow: 0 1rem 2rem rgba($color-black-1, $alpha), inset -5px 5px 5px lighten($color-primary-red, 15%), inset 5px -5px 5px darken($color-primary-red, 15%);
         }
         &:active {
-            box-shadow: 0 .5rem 1rem rgba($color-black-1, $alpha), inset 5px 5px 5px darken($color-primary-red, 15%), inset -5px -5px 5px lighten($color-primary-red, 15%);
+            box-shadow: 0 .5rem 1rem rgba($color-black-1, $alpha), inset -5px 5px 5px darken($color-primary-red, 15%), inset 5px -5px 5px lighten($color-primary-red, 15%);
         }
     }
     &--active &__icon {
-        transform: rotate(225deg);
+        transform: rotate(-225deg);
         background-color: $color-primary-blue;
     }
     &--active:hover &__icon {
@@ -142,7 +142,7 @@
     }
     &:hover {
         transform: translateY(-3px);
-        box-shadow: 0 1rem 2rem rgba($color-black-1, $alpha), inset -5px 5px 5px lighten($color-primary-blue, 15%), inset 5px -5px 5px darken($color-primary-blue, 15%);
+        box-shadow: 0 1rem 2rem rgba($color-black-1, $alpha), inset 5px 5px 5px lighten($color-primary-blue, 15%), inset -5px -5px 5px darken($color-primary-blue, 15%);
         &::after {
             transform: scale(1.5);
             opacity: 0;
@@ -150,7 +150,7 @@
     }
     &:active {
         transform: translateY(-1px);
-        box-shadow: 0 .5rem 1rem rgba($color-black-1, $alpha), inset -5px 5px 5px darken($color-primary-blue, 15%), inset 5px -5px 5px lighten($color-primary-blue, 15%);
+        box-shadow: 0 .5rem 1rem rgba($color-black-1, $alpha), inset 5px 5px 5px darken($color-primary-blue, 15%), inset -5px -5px 5px lighten($color-primary-blue, 15%);
     }
 }
 .btn-remove-cards {
