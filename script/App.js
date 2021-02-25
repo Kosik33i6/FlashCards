@@ -56,21 +56,17 @@ export class App {
 
         this.selectFontSize.setterValueItem.addEventListener('click', this.selectFontSize.setValue.bind(this));
     }
-
-    // * Get Cards Data from localstorage
     getCardsData() {
         const data = JSON.parse(localStorage.getItem('cardsData'));
         if(data === null) return [];
         else return data; 
     }
 
-    //  * Set Cards Data
     setCardsData(cardsData) {
         localStorage.setItem('cardsData', JSON.stringify(cardsData));
         window.location.reload();
     }
 
-    // * Create Cards
     createCards(cardsData) {
         if(cardsData.length === 0) {
             return;
@@ -79,7 +75,6 @@ export class App {
         }
     }
 
-    //  * Create Card
     createCard({cardFrontSide, cardBackSide, bgColor}, index) {
         const cardSideFront = document.createElement('div');
         const cardSideBack = document.createElement('div');
@@ -115,7 +110,6 @@ export class App {
         }
     }
 
-    // *Flip Card
     flipElement(card) {
         const cardChild = [...card.childNodes].shift();
     
@@ -125,7 +119,7 @@ export class App {
             return;
         }
     }
-    // * Set focus on clicked editor
+
     setFocusOnEditor(event) {
         const clickedElement = event.target;
 

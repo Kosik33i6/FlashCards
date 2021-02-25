@@ -2,7 +2,6 @@ export class CardChanger {
     constructor(btnChangeCard) {
         this.btnChangeCard = btnChangeCard;
     }
-    // * Previous Card
     previousCard() {
         const previousCards = [...document.querySelectorAll('.card--previous')];
         const currentCard = document.querySelector('.card--current');
@@ -17,7 +16,6 @@ export class CardChanger {
             this.cardsCounter.textContent = `${this.currentCardNum + 1} | ${this.totalCardsNum}`;
         }
     }
-    //  * Next Card
     nextCard() {
         const nextCards = [...document.querySelectorAll('.card--next')];
         const currentCard = document.querySelector('.card--current');

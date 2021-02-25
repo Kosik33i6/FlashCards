@@ -2,7 +2,6 @@ export class DeleteCards {
     constructor(btnDelete) {
         this.btnDelete = btnDelete;
     }
-    //  * Delete Cards
     deleteCards() {
         if(this.cardsData.length === 0) {
             return;

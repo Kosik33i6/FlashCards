@@ -2,7 +2,6 @@ export class AddCard {
     constructor(button) {
         this.button = button;
     }
-    // *Add card
     addCard() {
         const newCardData = {
             cardFrontSide: this.editorCardFrontSide.innerHTML,

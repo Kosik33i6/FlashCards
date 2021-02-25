@@ -3,7 +3,6 @@ export class ToogleEditor {
         this.btnToggle = btnToggle;
         this.itemToChange = itemToChange;
     }
-    // * Open / Close editor
     toggleEditor(editor, activeEditor) {
         this.btnToggle.classList.toggle('btn-toggle-editor--active');
         editor.classList.toggle('section-editor--visible');
