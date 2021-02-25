@@ -354,11 +354,19 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-basis: 10%; }
+  @media (max-width: 900px) and (orientation: landscape) {
+    .toolbar {
+      padding: .5rem; } }
+  @media (max-width: 450px) and (orientation: portrait) {
+    .toolbar {
+      padding: 0; } }
   .toolbar__btn-box {
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center; }
+    .toolbar__btn-box--select {
+      border-left: 1px solid #c0cad1; }
     @media (max-width: 1200px) and (orientation: landscape) {
       .toolbar__btn-box {
         flex-basis: 7rem; } }
@@ -437,6 +445,17 @@ body {
     width: 0;
     height: 0;
     opacity: 0; }
+  .toolbar__select {
+    background-color: #546E7A;
+    border: 1px solid #eceff1;
+    padding: .3rem .5rem;
+    margin-left: .5rem;
+    border-radius: 1.25rem;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: #fff; }
+    .toolbar__select:focus {
+      outline: none; }
 
 .center-element {
   display: flex;

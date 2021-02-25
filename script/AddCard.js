@@ -8,7 +8,7 @@ export class AddCard {
             cardFrontSide: this.editorCardFrontSide.innerHTML,
             cardBackSide: this.editorCardBackSide.innerHTML,
             bgColor: this.bgColor,
-        };                
+        };               
         if(newCardData.cardFrontSide === "" || newCardData.cardBackSide === "") {
             alert('The content on the card is empty');
             return;

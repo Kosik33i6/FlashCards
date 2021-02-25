@@ -2,8 +2,8 @@ export class Toolbar {
     constructor(toolbarBtns) {
         this.toolbarBtns = toolbarBtns;
     }
-    formatText(element) {
-        const command = element.dataset['command'];
+    formatText(event) {
+        const command = event.dataset['command'];
         console.log(command);
         if(command === 'createLink' || command === 'insertImage') {
             let url = prompt('Enter the link here:');

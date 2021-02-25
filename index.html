@@ -51,12 +51,12 @@
                 <div class="toolbar">
                     <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
-                            <i class="toolbar__icon fas fa-undo" data-command="undo" data-title="Undo"></i>
+                            <i class="toolbar__icon fas fa-subscript" data-command="subscript" data-title="Subscript"></i>
                         </button>
                     </div>
                     <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
-                            <i class="toolbar__icon fas fa-redo" data-command="redo" data-title="Redo"></i>
+                            <i class="toolbar__icon fas fa-superscript" data-command="superscript" data-title="Superscript"></i>
                         </button>
                     </div>
 
@@ -120,7 +120,7 @@
                             <i class="toolbar__icon fas fa-image" data-command="insertImage" data-title="Insert Image"></i>
                         </button>
                     </div>
-                    <div class="toolbar__btn-box">
+                    <!-- <div class="toolbar__btn-box">
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-cut" data-command="cut" data-title="Cut"></i>
                         </button>
@@ -129,7 +129,7 @@
                         <button class="toolbar__btn">
                             <i class="toolbar__icon fas fa-copy" data-command="copy" data-title="Copy"></i>
                         </button>
-                    </div>  
+                    </div>   -->
                     <div class="toolbar__btn-box">
                         <label class="toolbar__label" for="foreColor">
                             <i class="toolbar__icon toolbar__icon--label fa fa-font" aria-hidden="true" data-title="Font Color"></i>
@@ -141,6 +141,21 @@
                             <i class="toolbar__icon toolbar__icon--label fas fa-paint-brush" data-title="Background"></i>
                             <input type="color" class="toolbar__input toolbar__input--bg-color" id="backColor" data-command="backColor" />
                         </label>
+                    </div>
+                    <div class="toolbar__btn-box toolbar__btn-box--select">
+                        <label for="fontSize" class="toolbar__label">
+                            <i class="toolbar__icon toolbar__icon--label fas fa-text-height" data-title="Font Size"></i>
+                        </label>
+                        <div class="toolbar__select-box">
+                            <select name="fontSize" id="fontSize" class="toolbar__select" data-command="fontSize">
+                                <option class="toolbar__option" value="1">Very Small</option>
+                                <option class="toolbar__option" value="2">Small</option>
+                                <option class="toolbar__option" value="3">Medium</option>
+                                <option class="toolbar__option" value="4">Large</option>
+                                <option class="toolbar__option" value="5">Extra large</option>
+                                <option class="toolbar__option" value="6">Biggest</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                </div>

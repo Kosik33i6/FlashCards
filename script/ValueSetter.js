@@ -1,19 +1,17 @@
-export class Input {
-    constructor(input) {
-        this.input = input;
+export class ValueSetter {
+    constructor(setterValueItem) {
+        this.setterValueItem = setterValueItem;
     }
     // * Set text color
-    setTextColor(event) {
+    setValue(event) {
         const value = event.target.value;
         const command = event.target.dataset['command'];
-        console.log(command, value);
         document.execCommand(command, false, value);
     }
     // * set bg card color
     setBgColor(event) {
         const value = event.target.value;
         this.bgColor = value;
-        console.log('bgColor: ', this.bgColor);
         this.editorCardFrontSide.style.backgroundColor = this.bgColor;
         this.editorCardBackSide.style.backgroundColor = this.bgColor;
     }

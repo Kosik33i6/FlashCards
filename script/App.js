@@ -3,12 +3,11 @@ import {AddCard} from './AddCard.js';
 import {DeleteCards} from './DeleteCards.js';
 import {CardChanger} from './CardChanger.js';
 import {Toolbar} from './Toolbar.js';
-import {Input} from './Input.js';
-
+import {ValueSetter} from './ValueSetter.js';
 export class App {  
-    constructor({ btnToggleEditor, shiftingElInBtn, btnAddCard, btnDeleteCards, btnPreviousCard, btnNextCard, editor, cardsContainer, cardsCounter, editorCardFrontSide, editorCardBackSide, toolbarButtons, inputTextColor, inputBgColor}) {
+    constructor({ btnToggleEditor, shiftingElInBtn, btnAddCard, btnDeleteCards, btnPreviousCard, btnNextCard, editor, cardsContainer, cardsCounter, editorCardFrontSide, editorCardBackSide, toolbarButtons, inputTextColor, inputBgColor, selectFontSize}) {
         this.btnToggleEditor = new ToogleEditor(btnToggleEditor, shiftingElInBtn);
-        
+
         this.btnAddCard = new AddCard(btnAddCard, this.currentCardNum);
         this.btnDeleteCards = new DeleteCards(btnDeleteCards);
 
@@ -17,8 +16,10 @@ export class App {
 
         this.toolbarButtons = new Toolbar(toolbarButtons);
 
-        this.inputTextColor = new Input(inputTextColor);
-        this.inputBgColor = new Input(inputBgColor);
+        this.inputTextColor = new ValueSetter(inputTextColor);
+        this.inputBgColor = new ValueSetter(inputBgColor);
+
+        this.selectFontSize = new ValueSetter(selectFontSize);
 
         this.editor = editor;
         this.cardsContainer = cardsContainer;
@@ -50,8 +51,10 @@ export class App {
         this.toolbarButtons.toolbarBtns.forEach(button => {
             button.addEventListener('click', (element) => this.toolbarButtons.formatText(element.target));
         });
-        this.inputTextColor.input.addEventListener('change', this.inputTextColor.setTextColor);
-        this.inputBgColor.input.addEventListener('change', this.inputBgColor.setBgColor.bind(this));
+        this.inputTextColor.setterValueItem.addEventListener('change', this.inputTextColor.setValue.bind(this));
+        this.inputBgColor.setterValueItem.addEventListener('change', this.inputBgColor.setBgColor.bind(this));
+
+        this.selectFontSize.setterValueItem.addEventListener('click', this.selectFontSize.setValue.bind(this));
     }
 
     // * Get Cards Data from localstorage
@@ -122,11 +125,13 @@ export class App {
             return;
         }
     }
-    // * Set Foucs on editor
+    // * Set focus on clicked editor
     setFocusOnEditor(event) {
         const clickedElement = event.target;
-        
-        if(clickedElement === this.editorCardFrontSide) {
+
+        if(clickedElement === this.selectFontSize.setterValueItem || clickedElement === this.inputTextColor.setterValueItem) {
+            return;
+        } else if(clickedElement === this.editorCardFrontSide) {
             this.activeEditor = this.editorCardFrontSide;
             this.activeEditor.focus();
         } else if (clickedElement === this.editorCardBackSide) {

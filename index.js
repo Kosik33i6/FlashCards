@@ -15,5 +15,6 @@ const flashCards = new App({
     toolbarButtons: document.querySelectorAll('.toolbar__btn'),
     inputTextColor: document.querySelector('.toolbar__input--text-color'),
     inputBgColor: document.querySelector('.toolbar__input--bg-color'),
+    selectFontSize: document.querySelector('.toolbar__select'),
 });
 flashCards.init();
